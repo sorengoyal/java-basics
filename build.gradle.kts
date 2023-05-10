@@ -1,12 +1,12 @@
 plugins {
-    id("java")
+    id("java") //Tells gradle that this is a java project
 }
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
+    mavenCentral() //Respositories from where to download the code from, other examples - bintray,
 }
 
 dependencies {
@@ -16,4 +16,10 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+tasks.withType<Jar>{
+    manifest {
+        attributes["Main-Class"] = "org.example.Main"
+    }
 }
