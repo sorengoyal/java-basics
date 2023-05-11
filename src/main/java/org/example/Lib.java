@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example;
 
 public interface Lib {
     static String getGreeting() {
